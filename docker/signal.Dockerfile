@@ -17,6 +17,7 @@ FROM alpine
 COPY --from=builder /ion/signal /signal
 
 COPY configs/docker/signal.toml /configs/signal.toml
+COPY configs/certs /configs/certs
 
 ENTRYPOINT ["/signal"]
 CMD ["-c", "/configs/signal.toml"]

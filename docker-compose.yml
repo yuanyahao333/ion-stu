@@ -37,6 +37,7 @@ services:
       context: .
     volumes:
       - "./configs/docker/signal.toml:/configs/signal.toml"
+      - "./configs/certs:/configs/certs"
     ports:
       - 5551:5551
     depends_on:

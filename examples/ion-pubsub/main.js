@@ -20,12 +20,20 @@ let localDataChannel;
 let trackEvent;
 
 const url = 'http://localhost:5551';
-const uid = uuidv4();
+const uid = guid();
 const sid = "ion";
 let room;
 let rtc;
 let localStream;
 let start;
+
+function guid() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = Math.random() * 16 | 0,
+          v = c == 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+  });
+}
 
 const join = async () => {
     console.log("[join]: sid="+sid+" uid=", uid)
